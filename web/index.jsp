@@ -6,7 +6,7 @@
         <title>Cadastro</title>
     </head>
     <body>
-        <form action="exibir.jsp" method="GET">
+        <form action="ClienteServlet" method="POST">
             <h1>
                 Cadastro
             </h1>
@@ -67,7 +67,7 @@
                 <tr>
                     <td>
                         <label for="txtdtnascimento">Data de Nascimento:<br></label>
-                        <input type="date" id="txtdtnascimento" name="dtnascimento"/>
+                        <input type="date" id="txtdtnascimento" name="datanascimento"/>
                     </td>
                     <td>
                         <table border="1" cellspacing="0" cellpadding="0">
@@ -78,15 +78,15 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input name="sexo" type="radio" id="rdbMasculino" value="Masculino" />
+                                    <input name="sexo" type="radio" id="rdbMasculino" value="M" />
                                     <label for="rdbMasculino">Masculino</label>
                                 </td>
                                 <td>
-                                    <input name="sexo" type="radio" id="rdbFeminino" value="Feminino" />
+                                    <input name="sexo" type="radio" id="rdbFeminino" value="F" />
                                     <label for="rdbFeminino">Feminino</label>
                                 </td>
                                 <td>
-                                    <input name="sexo" type="radio" id="rdbOutro" value="Outros" />
+                                    <input name="sexo" type="radio" id="rdbOutro" value="O" />
                                     <label for="rdbOutro">Outros</label>
                                 </td>
                             </tr>
@@ -96,10 +96,10 @@
                     <td>
                         <label for="sltEscolaridade">Escolaridade:</label><br>
                         <select id="sltEscolaridade" name="escolaridade">
-                            <option value="Ensino Medio">Ensino Medio</option>
-                            <option value="Ensino Tecnico">Ensino Técnico</option>
-                            <option value="Ensino Superior">Ensino Superior</option>
-                            <option value="Pos Graduacao">Pós Graduação</option>
+                            <option value="EM">Ensino Medio</option>
+                            <option value="ET">Ensino Técnico</option>
+                            <option value="ES">Ensino Superior</option>
+                            <option value="PG">Pós Graduação</option>
                         </select>
                     </td>
                     <td>
