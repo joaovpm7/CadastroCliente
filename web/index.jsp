@@ -128,58 +128,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">
-                        <fieldset>
-                            <legend>Endereço Completo</legend>
-                            <label for="txtcep">CEP:</label><br>
-                            <input type="number" id="txtcep" name="cep"/>
-                            <br>
-                            <label for="txtlogra">Logradouro:</label><br>
-                            <input type="text" id="txtlogra" name="logra"/>
-                            <br>
-                            <label for="txtnume">Numero:</label><br>
-                            <input type="number" id="txtnume" name="numero"/>
-                            <br>
-                            <label for="txtBairro">Bairro:</label><br>
-                            <input type="text" id="txtBairro" name="bairro"/>
-                            <br>
-                            <label for="txtCidade">Cidade:</label><br>
-                            <input type="text" id="txtCidade" name="cidade"/>
-                            <br>
-                            <label for="sltUF">UF:</label><br>
-                            <select id="sltUF" name="estado">
-                                <option value="AC">AC</option>
-                                <option value="AL">ACL</option>
-                                <option value="AP">AP</option>
-                                <option value="AM">AM</option>
-                                <option value="BA">BA</option>
-                                <option value="CE">CE</option>
-                                <option value="DF">DF</option>
-                                <option value="ES">ES</option>
-                                <option value="GO">GO</option>
-                                <option value="MA">MA</option>
-                                <option value="MT">MT</option>
-                                <option value="MS">MS</option>
-                                <option value="MG">MG</option>
-                                <option value="PA">PA</option>
-                                <option value="PB">PB</option>
-                                <option value="PR">PR</option>
-                                <option value="PE">PE</option>
-                                <option value="PI">PI</option>
-                                <option value="RJ">RJ</option>
-                                <option value="RN">RN</option>
-                                <option value="RS">RS</option>
-                                <option value="RO">RO</option>
-                                <option value="RR">RR</option>
-                                <option value="SC">SC</option>
-                                <option value="SP">SP</option>
-                                <option value="SE">SE</option>
-                                <option value="TO">TO</option>
-                            </select>
-                        </fieldset>
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="4" style="text-align: center;">
                         <input type="submit" value="Cadastrar"/>
                     </td>
