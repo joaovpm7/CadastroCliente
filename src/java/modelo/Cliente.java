@@ -11,6 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import util.BancoDados;
 
 /**
@@ -29,6 +32,7 @@ public class Cliente {
     private String email;
     private String ddd;
     private String telefone;
+    private Timestamp dataCadastro;
 
     public long getId() {
         return id;
@@ -110,6 +114,14 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    public Timestamp getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Timestamp dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
     public long Cadastrar() {
         try {
             Connection conn = BancoDados.getConexao(); //conectar com o bando de dados e enviar os dados salvos da classe Contato.
@@ -144,6 +156,37 @@ public class Cliente {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return 0;
+        }
+    }
+
+    public List<Cliente> ListarCliente() {
+        try {
+            Connection conn = BancoDados.getConexao();
+            String sql = "SELECT * FROM tb_cliente; ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            List<Cliente> lista = new ArrayList();
+            final ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                //id, nome, tipodocumento, documento, sexo, datanascimento, ddd, telefone, escolaridade, email, datacadastro
+                Cliente p = new Cliente();
+                p.setId(rs.getInt("id"));
+                p.setNome(rs.getString("nome"));
+                p.setTipoDocumento(rs.getString("tipodocumento"));
+                p.setDocumento(rs.getString("documento"));
+                p.setSexo(rs.getString("sexo"));
+                p.setDataNascimento(rs.getDate("datanascimento"));
+                p.setDdd(rs.getString("ddd"));
+                p.setTelefone(rs.getString("telefone"));
+                p.setEscolaridade("escolaridade");
+                p.setEmail(rs.getString("email"));
+                p.setDataCadastro(rs.getTimestamp("datacadastro"));
+                lista.add(p);
+            }
+            return lista;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 }
